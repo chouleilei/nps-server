@@ -1,0 +1,31 @@
+# Git 相关
+.git
+.gitignore
+.gitattributes
+
+# 文档
+README.md
+*.md
+
+# Docker 相关
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# 开发工具
+.vscode
+.idea
+
+# 临时文件
+*.tmp
+*.log
+*.pid
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 构建产物（如果有的话）
+build/
+dist/
+target/ 

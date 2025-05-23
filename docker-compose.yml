@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  nps:
+    build: .
+    container_name: nps-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080"   # Web管理界面
+      - "8024:8024"   # 客户端连接端口
+      - "80:80"       # HTTP代理端口
+      - "443:443"     # HTTPS代理端口
+    volumes:
+      - ./conf:/app/conf
+      - ./web:/app/web
+      - nps_data:/app/data
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - nps-network
+
+volumes:
+  nps_data:
+
+networks:
+  nps-network:
+    driver: bridge 
